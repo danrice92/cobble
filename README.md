@@ -20,3 +20,6 @@ Novum Opus is a social platform that allows peers to share information about job
 
 ## Testing
 1. `bundle exec rspec`
+
+## Troubleshooting
+- You may need to run `bundle exec rails webpacker:install:react` if you are getting unexpected syntax errors in your JavaScript.
