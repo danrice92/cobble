@@ -9,6 +9,7 @@ Novum Opus is a social platform that allows peers to share information about job
 - [React 16.6.3](https://reactjs.org/versions)
 - [Webpacker](https://github.com/rails/webpacker)
 - [Yarn](https://yarnpkg.com/en/docs/install)
+- [PhantomJS with @babel/polyfill included in the React registry for testing. The Poltergeist repo has good advice for installing it](https://github.com/teampoltergeist/poltergeist)
 
 ## Setup
 1. `git clone git@github.com:danrice92/novum-opus-web.git` - clone the project down from GitHub.
