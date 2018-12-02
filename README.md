@@ -19,4 +19,4 @@ Novum Opus is a social platform that allows peers to share information about job
 6. `bundle exec rails s` - start the server at localhost:3000
 
 ## Testing
-No tests... yet.
+1. `bundle exec rspec`
