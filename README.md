@@ -1,24 +1,22 @@
-# README
+# Novum Opus Web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Novum Opus is a social platform that allows peers to share information about job and career path prospects. This repo is home to the web application and the database.
 
-Things you may want to cover:
+## Technology Stack
+- [Ruby 2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/)
+- [Rails 5.2.1.1](https://weblog.rubyonrails.org/2018/11/27/Rails-4-2-5-0-5-1-5-2-have-been-released/)
+- [PostgreSQL 9.2 and later](https://www.postgresql.org/download/)
+- [React 16.6.3](https://reactjs.org/versions)
+- [Webpacker](https://github.com/rails/webpacker)
+- [Yarn](https://yarnpkg.com/en/docs/install)
 
-* Ruby version
+## Setup
+1. `git clone git@github.com:danrice92/novum-opus-web.git` - clone the project down from GitHub.
+2. `bundle install` - install dependencies
+3. `bundle exec rails db:create` - create the database
+4. `bundle exec rails db:migrate` - migrate the database
+5. `yarn` - install JavaScript dependencies (run `yarn upgrade` if you are seeing unmet peer dependency warnings)
+6. `bundle exec rails s` - start the server at localhost:3000
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Testing
+No tests... yet.
