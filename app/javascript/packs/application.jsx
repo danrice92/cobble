@@ -1,18 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
+import WebpackerReact from "webpacker-react";
 
-export default class Application extends React.Component {
-  render() {
-    return(
-      <h1>Novum Opus</h1>
-    );
-  }
-}
+import Landing from "./landing";
+import Header from "./header";
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Application />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+WebpackerReact.setup({Landing});
+WebpackerReact.setup({Header});
