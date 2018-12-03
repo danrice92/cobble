@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'semantic-ui.scss';
+@import 'variables.scss';
+
+div.ui.menu.header {
+  margin-bottom: 25px;
+
+  a.item.header-option {
+    color: $green;
+  }
+}

@@ -2,13 +2,16 @@
   "name": "novum-opus-web",
   "private": true,
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "semantic-ui-react": "^0.83.0",
+    "webpacker-react": "^0.3.2"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "^2.11.1"
   }
 }
