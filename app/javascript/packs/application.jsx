@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import WebpackerReact from "webpacker-react";
 
 import Landing from "./landing";
-import Header from "./header";
+import Navigation from "./navigation";
 
 WebpackerReact.setup({Landing});
-WebpackerReact.setup({Header});
+WebpackerReact.setup({Navigation});

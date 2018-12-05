@@ -17,10 +17,15 @@
 @import 'semantic-ui.scss';
 @import 'variables.scss';
 
-div.ui.menu.header {
+div.ui.menu.navigation {
   margin-bottom: 25px;
 
-  a.item.header-option {
-    color: $green;
+  a.item {
+    color: $cool-green;
+    font-size: 20px;
   }
+}
+
+div.ui.large.header {
+  font-weight: 300;
 }

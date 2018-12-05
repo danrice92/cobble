@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import { Menu, Header } from "semantic-ui-react";
 
-export default class Application extends React.Component {
+export default class Navigation extends React.Component {
   render() {
     return (
-      <Menu className="header">
-        <Menu.Item href="/" className="header-option">
+      <Menu className="navigation">
+        <Menu.Item href="/">
           Novum Opus
         </Menu.Item>
       </Menu>
