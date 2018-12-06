@@ -21,11 +21,22 @@ export default class Navigation extends Component {
       <div>
         <Responsive {...Responsive.onlyMobile}>
           <Sidebar.Pushable>
-            <Sidebar as={Menu} animation="overlay" icon="labeled" vertical visible={visible}>
+            <Sidebar
+              as={Menu}
+              className="navigation"
+              animation="overlay"
+              icon="labeled"
+              vertical
+              visible={visible}
+            >
               <Menu.Item href="/">Novum Opus</Menu.Item>
             </Sidebar>
-              <Sidebar.Pusher dimmed={visible} onClick={this.handlePusher} style={{ minHeight: "100vh" }}>
-                <Menu>
+              <Sidebar.Pusher
+                dimmed={visible}
+                onClick={this.handlePusher}
+                style={{ minHeight: "100vh" }}
+              >
+                <Menu className="navigation">
                   <Menu.Item onClick={this.handleToggle}><Icon name="sidebar" /></Menu.Item>
                   <Menu.Item href="/">Novum Opus</Menu.Item>
                 </Menu>
