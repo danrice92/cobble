@@ -25,6 +25,17 @@ div.ui.menu.navigation {
   }
 }
 
-div.ui.large.header {
+div.ui.header {
+  color: $cool-green;
+  font-size: 20px;
   font-weight: 300;
+}
+
+div.ui.right.aligned.grid {
+  margin-bottom: 20px;
+
+  a.right.floated.column {
+    color: $cool-green;
+    font-size: 20px;
+  }
 }

@@ -7,6 +7,8 @@ import WebpackerReact from "webpacker-react";
 
 import Landing from "./landing";
 import Navigation from "./navigation";
+import NewJobExperience from "./newJobExperience";
 
 WebpackerReact.setup({Landing});
 WebpackerReact.setup({Navigation});
+WebpackerReact.setup({NewJobExperience});

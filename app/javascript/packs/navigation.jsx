@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import { Menu, Container, Header, Icon, Image, Sidebar, Responsive, Segment } from "semantic-ui-react";
 
