@@ -18,7 +18,8 @@ Novum Opus is a social platform that allows peers to share information about job
 3. `bundle exec rails db:create` - create the database
 4. `bundle exec rails db:migrate` - migrate the database
 5. `yarn` - install JavaScript dependencies (run `yarn upgrade` if you are seeing unmet peer dependency warnings)
-6. `bundle exec rails s` - start the server at localhost:3000
+6. `yarn global add phantomjs`
+7. `bundle exec rails s` - start the server at localhost:3000
 
 ## Testing
 1. `bundle exec rspec`
