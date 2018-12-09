@@ -1,6 +1,6 @@
 # Cobble Web
 
-Cobble is a social platform that allows peers to share information about job and career path prospects. This repo is home to the web application and the database.
+Cobble is a social platform that allows peers to share career advice. This repo is home to the web application and the database.
 
 ## Technology Stack
 - [Ruby 2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/)
