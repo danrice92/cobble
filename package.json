@@ -1,5 +1,5 @@
 {
-  "name": "novum-opus-web",
+  "name": "cobble",
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.0.0",

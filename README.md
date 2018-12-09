@@ -1,6 +1,6 @@
-# Novum Opus Web
+# Cobble Web
 
-Novum Opus is a social platform that allows peers to share information about job and career path prospects. This repo is home to the web application and the database.
+Cobble is a social platform that allows peers to share information about job and career path prospects. This repo is home to the web application and the database.
 
 ## Technology Stack
 - [Ruby 2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/)
@@ -13,7 +13,7 @@ Novum Opus is a social platform that allows peers to share information about job
 - [PhantomJS with @babel/polyfill included in the React registry for testing. The Poltergeist repo has good advice for installing it](https://github.com/teampoltergeist/poltergeist)
 
 ## Setup
-1. `git clone git@github.com:danrice92/novum-opus-web.git` - clone the project down from GitHub.
+1. `git clone git@github.com:danrice92/cobble.git` - clone the project down from GitHub.
 2. `bundle install` - install dependencies
 3. `bundle exec rails db:create` - create the database
 4. `bundle exec rails db:migrate` - migrate the database

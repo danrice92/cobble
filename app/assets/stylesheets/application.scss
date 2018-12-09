@@ -16,26 +16,36 @@
 
 @import 'variables.scss';
 
-div.ui.menu.navigation {
-  margin-bottom: 25px;
-
-  a.item {
-    color: $cool-green;
-    font-size: 20px;
+div.ui.menu {
+  background-color: $blue;
+  .item {
+    color: $white;
+  }
+  &:hover {
+    background-color: $dark-blue;
   }
 }
 
-div.ui.header {
-  color: $cool-green;
-  font-size: 20px;
-  font-weight: 300;
-}
-
-div.ui.right.aligned.grid {
-  margin-bottom: 20px;
-
-  a.right.floated.column {
-    color: $cool-green;
-    font-size: 20px;
-  }
-}
+// div.ui.menu.navigation {
+//   margin-bottom: 25px;
+//
+//   a.item {
+//     color: $cool-green;
+//     font-size: 20px;
+//   }
+// }
+//
+// div.ui.header {
+//   color: $cool-green;
+//   font-size: 20px;
+//   font-weight: 300;
+// }
+//
+// div.ui.right.aligned.grid {
+//   margin-bottom: 20px;
+//
+//   a.right.floated.column {
+//     color: $cool-green;
+//     font-size: 20px;
+//   }
+// }

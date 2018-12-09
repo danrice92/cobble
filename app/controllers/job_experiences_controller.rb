@@ -2,7 +2,7 @@ class JobExperiencesController < ApplicationController
   protect_from_forgery with: :null_session
 
   def new
-    render react_component: "NewJobExperience"
+    # render react_component: "NewJobExperience"
   end
 
   def create

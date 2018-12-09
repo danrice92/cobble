@@ -28,7 +28,7 @@ export default class Navigation extends Component {
               vertical
               visible={visible}
             >
-              <Menu.Item href="/">Novum Opus</Menu.Item>
+              <Menu.Item href="/">Cobble</Menu.Item>
             </Sidebar>
               <Sidebar.Pusher
                 dimmed={visible}
@@ -37,7 +37,7 @@ export default class Navigation extends Component {
               >
                 <Menu className="navigation">
                   <Menu.Item onClick={this.handleToggle}><Icon name="sidebar" /></Menu.Item>
-                  <Menu.Item href="/">Novum Opus</Menu.Item>
+                  <Menu.Item href="/">Cobble</Menu.Item>
                 </Menu>
                 <Content />
               </Sidebar.Pusher>
@@ -46,7 +46,7 @@ export default class Navigation extends Component {
 
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
           <Menu className="navigation">
-            <Menu.Item href="/">Novum Opus</Menu.Item>
+            <Menu.Item href="/">Cobble</Menu.Item>
           </Menu>
           <Content />
         </Responsive>
