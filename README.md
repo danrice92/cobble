@@ -1,5 +1,4 @@
 # Novum Opus
-
 Novum Opus is a social platform that allows peers to share career advice. This repo is home to the web application and the database.
 
 ## Technology Stack
@@ -10,7 +9,7 @@ Novum Opus is a social platform that allows peers to share career advice. This r
 - [Webpacker](https://github.com/rails/webpacker)
 - [Webpacker React](https://github.com/renchap/webpacker-react)
 - [Yarn](https://yarnpkg.com/en/docs/install)
-- [PhantomJS with @babel/polyfill included in the React registry for testing. The Poltergeist repo has good advice for installing it](https://github.com/teampoltergeist/poltergeist)
+- [PhantomJS with @babel/polyfill included in the React registry for testing](https://github.com/teampoltergeist/poltergeist)
 
 ## Setup
 1. `git clone git@github.com:danrice92/novum_opus.git` - clone the project down from GitHub.
@@ -18,7 +17,7 @@ Novum Opus is a social platform that allows peers to share career advice. This r
 3. `bundle exec rails db:create` - create the database
 4. `bundle exec rails db:migrate` - migrate the database
 5. `yarn` - install JavaScript dependencies (run `yarn upgrade` if you are seeing unmet peer dependency warnings)
-6. `bundle exec rails s` - start the server at localhost:3000
+7. `bundle exec rails s` - start the server at localhost:3000
 
 ## Testing
 1. `bundle exec rspec`
