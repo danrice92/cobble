@@ -5,4 +5,16 @@
       Novum Opus is a social platform that allows peers to share career advice.
     </h1>
   </div>
+  <% @job_experiences.each do |je| %>
+    <div class="ui segment">
+      <div class="item">
+        <div class="ui header"><%= je.position %> at <%= je.company %></div>
+        <div>Location: <%= je.city %> <%= je.state %></div>
+        <div>Experience: <%= je.experience %></div>
+        <div>Pay: <%= je.pay %></div>
+        <div>Should you work here? <%= je.recommendation %></div>
+        <div>Website: <%= je.website %></div>
+      </div>
+    </div>
+  <% end %>
 </div>
