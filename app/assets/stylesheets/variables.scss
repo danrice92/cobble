@@ -1,12 +1,14 @@
 // Colors
-$green: #21ba45ff;
-
-$blue: #2A62BD;
-$cerulean-frost: #6D9DC5;
-$cool-green: #48A9A6;
-$light-purple: #8789C0;
-$light-blue: #4392F1;
+$blue: #2185d0;
+$dark-blue: #196198;
+$red: #d63031;
+$dark-red: #B02829;
+$dark-gray: #333333;
 $white: #FFFFFF;
-$pale-turquoise: #AEECEF;
-$royal-blue: #031A6B;
-$dark-midnight-blue: #033860;
+
+$primary: $blue;
+$primary-dark: $dark-blue;
+$accent: $red;
+$accent-dark: $dark-red;
+$text: $dark-gray;
+$background: $white;

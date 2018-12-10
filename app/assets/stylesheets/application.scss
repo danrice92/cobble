@@ -16,15 +16,41 @@
 
 @import 'variables.scss';
 
-div.ui.menu.navigation {
-  margin-bottom: 25px;
+div.ui.menu {
+  background-color: $primary;
+  border-radius: 0px;
+  margin-top: 0px;
 
-  a.item {
-    color: $cool-green;
-    font-size: 20px;
+  .item {
+    color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $dark-blue;
+    }
   }
 }
 
-div.ui.large.header {
-  font-weight: 300;
+img.ui.fluid.image {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+div.ui.segment {
+  border-radius: 0px;
+
+  h1.ui.center.aligned.header {
+    color: $primary;
+  }
+}
+
+p.ui.floating.message {
+  margin-bottom: 0px;
 }
