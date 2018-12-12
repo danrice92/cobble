@@ -1,4 +1,4 @@
-# Novum Opus
+# Novum Opus Web
 Novum Opus is a social platform that allows peers to share career advice. This repo is home to the web application and the database.
 
 ## Technology Stack
@@ -12,7 +12,7 @@ Novum Opus is a social platform that allows peers to share career advice. This r
 - [PhantomJS with @babel/polyfill included in the React registry for testing](https://github.com/teampoltergeist/poltergeist)
 
 ## Setup
-1. `git clone git@github.com:danrice92/novum_opus.git` - clone the project down from GitHub.
+1. `git clone git@github.com:danrice92/novum_opus_web.git` - clone the project down from GitHub.
 2. `bundle install` - install dependencies
 3. `bundle exec rails db:create` - create the database
 4. `bundle exec rails db:migrate` - migrate the database

@@ -1,5 +1,5 @@
 {
-  "name": "novum_opus",
+  "name": "novum_opus_web",
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
