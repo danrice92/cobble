@@ -56,5 +56,15 @@ p.ui.floating.message {
 }
 
 div.ui {
-  color: $text;
+  .item {
+    font-size: 16px;
+    color: $text;
+  }
+}
+
+div.ui.label {
+  font-size: 14px;
+  a.experience-link {
+    color: $accent;
+  }
 }

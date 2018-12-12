@@ -7,13 +7,26 @@
   </div>
   <% @job_experiences.each do |je| %>
     <div class="ui segment">
-      <div class="item">
         <div class="ui header"><%= je.position %> at <%= je.company %></div>
-        <div>Location: <%= je.city %> <%= je.state %></div>
-        <div>Experience: <%= je.experience %></div>
-        <div>Pay: <%= je.pay %></div>
-        <div>Should you work here? <%= je.recommendation %></div>
-        <div>Website: <%= je.website %></div>
+        <div class="ui label">Location: <%= je.city %>, <%= je.state %></div>
+        <div class="ui list">
+          <div class="item">
+            <div class="header">Experience</div>
+            <%= je.experience %>
+          </div>
+          <div class="item">
+            <div class="header">Pay</div>
+            <%= je.pay %>
+          </div>
+          <div class="item">
+            <div class="header">Recommendation</div>
+            <%= je.recommendation %>
+          </div>
+          <br>
+          <div class="ui label">Website:
+            <a class="experience-link" href="#{je.website}"><%= je.website %></a>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
