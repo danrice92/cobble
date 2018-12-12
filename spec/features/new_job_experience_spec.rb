@@ -16,5 +16,6 @@ feature "new job experience" do
     fill_in "Website", with: "www.t-mobile.com"
     click_on "Submit"
     expect(page).to have_content("Your experience has been saved")
+    expect(page).to have_content("T-Mobile")
   end
 end
