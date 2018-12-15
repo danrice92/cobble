@@ -1,0 +1,25 @@
+<div class="ui container">
+  <div class="ui segment">
+    <h1 class="ui center aligned header">Sign Up Form</h1>
+    <%= form_for @user, html: {class: 'ui form'} do |f| %>
+      <div class="field">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, placeholder: "John" %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, placeholder: "Smith" %>
+      </div>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email, placeholder: "john.smith@example.com" %>
+      </div>
+      <div class="ui list">
+        <div class="item">
+          Novum Opus uses magic links for verification. No need for yet another password!
+        </div>
+      </div>
+      <%= f.submit "Create Account", class: "ui button" %>
+    <% end %>
+  </div>
+</div>
