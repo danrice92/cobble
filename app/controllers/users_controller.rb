@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def new
+  def sign_up
     @user = User.new
   end
 
@@ -7,10 +7,11 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
+      @user.send_login_link
       flash.notice = "Thanks for signing up! Your verification email has been sent."
       redirect_to root_path
     else
-      render :new
+      render :sign_up
     end
   end
 
