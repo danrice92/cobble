@@ -27,8 +27,11 @@
     <div class="ui menu">
       <%= link_to "Novum Opus", root_path, class: "item" %>
       <div class="right menu">
-        <%= link_to "Share Your Experience", new_job_experiences_path, class: "item" %>
-        <%= link_to "Sign Up", new_users_path, class: "item" %>
+        <%= link_to "Share Your Experience", new_job_experience_path, class: "item" %>
+        <%= link_to "Sign Up", sign_up_path, class: "item" %>
+        <% if @current_user %>
+          <div class="item">You are signed in as <%= @current_user.first_name %> <%= @current_user.last_name %></div>
+        <% end %>
       </div>
     </div>
 
