@@ -1,15 +1,18 @@
 class SessionsController < ApplicationController
   def new
+    if @user
+      redirect_to root_path, alert: "You are already signed in!"
+    end
   end
 
   def create
-    email = params[:email].to_s
+    email = session_params[:email].to_s
     user = User.find_by_email email
 
     if !user
-      redirect_to new_session_path, notice: "Uh oh! We couldn't find that email. Please try again."
+      redirect_to sign_in_path, alert: "Uh oh! We couldn't find that email. Please try again."
     else
-      user.send_login_link
+      user.send_sign_in_link
       redirect_to root_path, notice: "We have sent you a login link. Please check your email."
     end
   end
@@ -27,5 +30,11 @@ class SessionsController < ApplicationController
       sign_in_user(user)
       redirect_to root_path, notice: "You have been signed in!"
     end
+  end
+
+  private
+
+  def session_params
+    params.require(:session).permit(:email)
   end
 end

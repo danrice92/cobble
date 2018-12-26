@@ -1,5 +1,20 @@
-<%= form_tag "/sessions" do %>
-  <label> Email </label>
-  <%= text_field_tag "email" %>
-  <%= submit_tag "Login" %>
-<% end %>
+<div class="ui container">
+  <div class="ui segment">
+    <h1 class="ui center aligned header">Sign In</h1>
+    <%= form_for :session, url: sessions_path, html: {class: "ui form"} do |f| %>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email, placeholder: "john.smith@example.com" %>
+      </div>
+
+      <div class="ui list">
+        <div class="item">
+          We will send you a magic link so you can log back into your account.
+        </div>
+      </div>
+
+      <%= f.submit "Sign In", class: "ui button" %>
+    <% end %>
+  </div>
+</div>

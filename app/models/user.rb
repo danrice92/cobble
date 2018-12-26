@@ -8,13 +8,22 @@ class User < ApplicationRecord
     self.email = self.email.delete(' ').downcase
   end
 
-  def send_login_link
+  def send_sign_up_link
    self.auth_token = generate_token
    self.auth_token_created_at = Time.now.utc
    save!
 
    path = "http://localhost:3000/auth/#{self.id}?token=#{self.auth_token}"
    UserMailer.with(user: self, path: path).sign_up_email.deliver_now
+  end
+
+  def send_sign_in_link
+    self.auth_token = generate_token
+    self.auth_token_created_at = Time.now.utc
+    save!
+
+    path = "http://localhost:3000/auth/#{self.id}?token=#{self.auth_token}"
+    UserMailer.with(user: self, path: path).sign_in_email.deliver_now
   end
 
   def valid_token? param_token

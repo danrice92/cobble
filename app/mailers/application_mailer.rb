@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'signups@novumopus.com'
+  default from: 'no-reply@novumopus.com'
   layout 'mailer'
 end
