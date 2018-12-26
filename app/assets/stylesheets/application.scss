@@ -1,5 +1,4 @@
 @import 'variables.scss';
-@import 'landing-page-layout.scss';
 @import 'job-experiences.scss';
 
 .ui.menu {
@@ -11,8 +10,8 @@
     color: $white;
 
     &:hover {
-      color: $white;
-      background-color: $dark-blue;
+      background: rgba(0,0,0,.03);
+      color: rgba(0,0,0,.95);
     }
   }
 }
