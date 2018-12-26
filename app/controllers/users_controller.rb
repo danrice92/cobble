@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash.notice = "Thanks for signing up! Your verification email has been sent."
       redirect_to root_path
     else
-      render :sign_up
+      render :new
     end
   end
 

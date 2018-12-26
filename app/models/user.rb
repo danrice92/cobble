@@ -9,12 +9,12 @@ class User < ApplicationRecord
   end
 
   def send_sign_up_link
-    generate_token_and_path self
+    path = generate_token_and_path self
     UserMailer.with(user: self, path: path).sign_up_email.deliver_now
   end
 
   def send_sign_in_link
-    generate_token_and_path self
+    path = generate_token_and_path self
     UserMailer.with(user: self, path: path).sign_in_email.deliver_now
   end
 
@@ -33,9 +33,9 @@ class User < ApplicationRecord
 
   private
 
-  def generate_token_and_path self
-    self.auth_token = SecureRandom.base64(10)
-    self.auth_token_created_at = Time.now.utc
+  def generate_token_and_path user
+    user.auth_token = SecureRandom.base64(10)
+    user.auth_token_created_at = Time.now.utc
     save!
 
     path = "http://localhost:3000/auth/#{self.id}?token=#{self.auth_token}"

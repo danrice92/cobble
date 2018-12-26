@@ -17,6 +17,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    user = User.find params[:id]
+    if user.email == session[:email]
+      session.delete(:email)
+      redirect_to root_path, notice: "You are now signed out."
+    else
+      redirect_to root_path, alert: "Oops, something went wrong. Please try again."
+    end
+  end
+
   def auth
     user_id = params[:id]
     token = params[:token]

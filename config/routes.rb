@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   # account creation
   resources :users, only: [:create]
-  get "/sign_up", to: "users#new", as: :sign_up
+  get "/sign_up", to: "users#new"
 
   # logins
-  resources :sessions, only: [:create]
-  get "/sign_in", to: "sessions#new", as: :sign_in
+  resources :sessions, only: [:create, :destroy]
+  get "/sign_in", to: "sessions#new"
 
   # authenticate token
   get "/auth/:id", to: "sessions#auth"

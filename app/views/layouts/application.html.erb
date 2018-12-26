@@ -5,6 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="stairs.png">
+    <link rel="apple-touch-icon-precomposed" href="stairs.png">
+    <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
     <%= stylesheet_link_tag  "//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css", media: "all" %>
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
@@ -29,6 +32,7 @@
       <div class="right menu">
         <% if @current_user %>
           <%= link_to "Share Your Experience", new_job_experience_path, class: "item" %>
+          <%= link_to "Sign Out", session_path(@current_user), method: :delete, class: "item" %>
           <div class="item"><%= @current_user.first_name %> <%= @current_user.last_name %></div>
         <% else %>
           <%= link_to "Sign Up", sign_up_path, class: "item" %>
