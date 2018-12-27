@@ -11,12 +11,16 @@
       color: $text;
     }
   }
-  
+
   .ui.label {
     font-size: 14px;
 
     .experience-link {
       color: $accent;
+      opacity: 1;
+      &:hover {
+        color: $accent-dark;
+      }
     }
   }
 }

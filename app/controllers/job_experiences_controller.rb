@@ -2,7 +2,7 @@ class JobExperiencesController < ApplicationController
   protect_from_forgery with: :null_session
 
   def new
-    @job_experience = JobExperience.new
+    @job_experience = authorize JobExperience.new
   end
 
   def create

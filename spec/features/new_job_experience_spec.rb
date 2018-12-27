@@ -1,8 +1,12 @@
 require "rails_helper"
 
 feature "new job experience" do
-  scenario "a user creates a job experience" do
+  let(:user) { create :user }
+
+  scenario "a signed-in user creates a job experience" do
+    page.set_rack_session email: user.email
     visit root_path
+
     click_on "Share Your Experience"
     expect(page).to have_content "New Job Experience"
 
@@ -17,5 +21,12 @@ feature "new job experience" do
     click_on "Submit"
     expect(page).to have_content("Your experience has been saved")
     expect(page).to have_content("T-Mobile")
+  end
+
+  scenario "a user is not signed in and tries to create a job experience" do
+    visit root_path
+    expect(page).to_not have_content "Share Your Experience"
+    visit new_job_experience_path
+    expect(page).to have_content "You are not authorized to perform this action."
   end
 end
