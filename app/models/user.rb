@@ -38,7 +38,7 @@ class User < ApplicationRecord
     user.auth_token_created_at = Time.now.utc
     save!
 
-    path = "http://localhost:3000/auth/#{self.id}?token=#{self.auth_token}"
+    path = "http://#{ENV['MAILER_HOST']}/auth/#{self.id}?token=#{self.auth_token}"
   end
 
   def token_validity
