@@ -1,7 +1,15 @@
 .ui.segment {
   border-radius: 0px;
 
-  .ui.center.aligned.header {
+  h1.ui.header {
+    font-size: 1.5rem;
+  }
+
+  h2.ui.header {
+    font-size: 1.3rem;
+  }
+  
+  .ui.header {
     color: $primary;
   }
 

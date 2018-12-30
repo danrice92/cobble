@@ -31,11 +31,11 @@
       <%= link_to "Novum Opus", root_path, class: "item" %>
       <div class="right menu">
         <% if @current_user %>
+          <%= link_to "Share", new_job_experience_path, class: "item" %>
           <div class="ui simple dropdown item">
             <%= @current_user.first_name %> <%= @current_user.last_name %>
             <i class="dropdown icon"></i>
             <div class="menu">
-              <%= link_to "Share Your Experience", new_job_experience_path, class: "item" %>
               <%= link_to "Sign Out", session_path(@current_user), method: :delete, class: "item" %>
             </div>
           </div>

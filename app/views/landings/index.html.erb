@@ -1,8 +1,13 @@
 <div class="ui container">
+  <% unless @current_user %>
+    <div class="ui segment">
+      <h1 class="ui center aligned header">
+        Novum Opus is a social platform that allows peers to share career advice.
+      </h1>
+    </div>
+  <% end %>
   <div class="ui segment">
-    <h1 class="ui center aligned header">
-      Novum Opus is a social platform that allows peers to share career advice.
-    </h1>
+    <h2 class="ui header">Latest Job Experiences</div>
   </div>
   <% @job_experiences.each do |je| %>
     <div class="ui segment">
