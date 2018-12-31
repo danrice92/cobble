@@ -14,6 +14,12 @@
       color: rgba(0,0,0,.95);
     }
   }
+
+  .right.menu {
+    .menu {
+      margin-top: 1px;
+    }
+  }
 }
 
 .ui.floating.message {

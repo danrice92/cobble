@@ -7,8 +7,8 @@ feature "new job experience" do
     page.set_rack_session email: user.email
     visit root_path
 
-    click_on "Share Your Experience"
-    expect(page).to have_content "New Job Experience"
+    click_on "Share"
+    expect(page).to have_content "Share Your Job Experience"
 
     fill_in "Position", with: "Retail Sales Associate"
     fill_in "Company", with: "T-Mobile"
@@ -25,7 +25,7 @@ feature "new job experience" do
 
   scenario "a user is not signed in and tries to create a job experience" do
     visit root_path
-    expect(page).to_not have_content "Share Your Experience"
+    expect(page).to_not have_content "Share"
     visit new_job_experience_path
     expect(page).to have_content "You are not authorized to perform this action."
   end
