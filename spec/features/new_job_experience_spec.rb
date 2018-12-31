@@ -8,7 +8,7 @@ feature "new job experience" do
     visit root_path
 
     click_on "Share"
-    expect(page).to have_content "New Job Experience"
+    expect(page).to have_content "Share Your Job Experience"
 
     fill_in "Position", with: "Retail Sales Associate"
     fill_in "Company", with: "T-Mobile"
