@@ -27,9 +27,7 @@ ActiveRecord::Schema.define(version: 2019_01_01_220420) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "creator_id"
-    t.bigint "users_id"
     t.index ["creator_id"], name: "index_job_experiences_on_creator_id"
-    t.index ["users_id"], name: "index_job_experiences_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,9 +38,7 @@ ActiveRecord::Schema.define(version: 2019_01_01_220420) do
     t.datetime "updated_at", null: false
     t.string "auth_token"
     t.datetime "auth_token_created_at"
-    t.bigint "job_experiences_id"
     t.index ["email"], name: "index_users_on_email"
-    t.index ["job_experiences_id"], name: "index_users_on_job_experiences_id"
   end
 
   add_foreign_key "job_experiences", "users", column: "creator_id"
