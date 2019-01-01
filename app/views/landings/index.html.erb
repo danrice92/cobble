@@ -14,9 +14,6 @@
       <div class="ui header">
         <%= je.position %> at <%= je.company %>
       </div>
-      <div class="ui label">
-        Location: <%= je.city %>, <%= je.state %>
-      </div>
       <div class="ui list">
         <div class="item">
           <div class="header">Experience</div>
@@ -30,9 +27,14 @@
           <div class="header">Recommendation</div>
           <%= je.recommendation %>
         </div>
-        <br>
         <div class="ui label">
-          Website: <a class="experience-link" href="<%= je.website %>"><%= je.website %></a>
+          Location: <%= je.city %>, <%= je.state %>
+        </div>
+        <div class="ui label">
+          Where to apply: <a class="experience-link" href="<%= je.website %>"><%= je.website %></a>
+        </div>
+        <div class="ui label">
+          Created by <%= je.creator.first_name %> <%= je.creator.last_name %>
         </div>
       </div>
     </div>
