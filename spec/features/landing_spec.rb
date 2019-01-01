@@ -1,8 +1,8 @@
 require "rails_helper"
 
 feature "landing" do
-  let!(:job_experience) { create :job_experience }
   let(:user) { create :user }
+  let!(:job_experience) { create :job_experience, creator_id: user.id }
 
   scenario "a user is not logged in" do
     visit root_path

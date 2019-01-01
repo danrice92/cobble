@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :job_experiences
+  
   validates_presence_of :first_name, :last_name
   validates :email, uniqueness: true, presence: true
 

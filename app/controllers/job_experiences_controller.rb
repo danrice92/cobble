@@ -27,7 +27,8 @@ class JobExperiencesController < ApplicationController
       :experience,
       :pay,
       :recommendation,
-      :website
+      :website,
+      :creator_id
     )
   end
 end

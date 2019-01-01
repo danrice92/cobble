@@ -34,6 +34,7 @@
         <%= f.label :website %>
         <%= f.text_field :website, placeholder: "https://careers.walmart.com/" %>
       </div>
+      <%= f.hidden_field :creator_id, value: @current_user.id %>
       <%= f.submit "Submit", class: "ui button" %>
     <% end %>
   </div>
