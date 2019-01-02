@@ -9,8 +9,8 @@ feature "edit job experience" do
     sign_in user
     visit root_path
     expect(page).to have_content(job_experience.company)
-    click_on "Update"
-    expect(page).to have_content "Update Your Job Experience"
+    click_on "Edit"
+    expect(page).to have_content "Edit This Job Experience"
 
     fill_in "Position", with: "Cashier"
     fill_in "Company", with: "Super Target"
@@ -25,8 +25,8 @@ feature "edit job experience" do
   scenario "a user updates a job experience they don't own" do
     sign_in the_other_guy
     visit root_path
-    click_on "Update"
-    expect(page).to have_content "Update Your Job Experience"
+    click_on "Edit"
+    expect(page).to have_content "Edit This Job Experience"
 
     fill_in "Pay", with: "Cashiering at Target now pays $12/hour."
     click_on "Update"
@@ -37,7 +37,7 @@ feature "edit job experience" do
 
   scenario "a user is not signed in and tries to update a job experience" do
     visit root_path
-    expect(page).to_not have_content "Update"
+    expect(page).to_not have_content "Edit"
     visit edit_job_experience_path job_experience
     expect(page).to have_content "You are not authorized to perform this action."
   end
