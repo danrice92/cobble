@@ -23,7 +23,7 @@ class JobExperiencesController < ApplicationController
   def update
     @job_experience = authorize JobExperience.find params[:id]
     if @job_experience.update job_experience_params
-      flash.notice = "Your experience has been updated."
+      flash.notice = "This experience has been updated."
       redirect_to root_path
     else
       render :edit
