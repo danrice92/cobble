@@ -15,10 +15,10 @@ class JobExperiencePolicy < ApplicationPolicy
   end
 
   def edit?
-    @record.creator == @user
+    new?
   end
 
   def update?
-    edit?
+    new?
   end
 end
