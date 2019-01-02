@@ -19,7 +19,7 @@ feature "new job experience" do
     fill_in "Recommendation", with: "It's a great place to work if you need a job or to pay the bills through college, but I wouldn't build a long-term career in T-Mobile retail."
     fill_in "Website", with: "www.t-mobile.com"
     click_on "Submit"
-    expect(page).to have_content("Your experience has been saved")
+    expect(page).to have_content("Your experience has been saved.")
     expect(page).to have_content("T-Mobile")
   end
 

@@ -6,13 +6,27 @@ class JobExperiencesController < ApplicationController
   end
 
   def create
-    @job_experience = JobExperience.new job_experience_params
+    @job_experience = authorize JobExperience.new job_experience_params
     if @job_experience.save
       flash.notice = "Your experience has been saved."
       redirect_to root_path
     else
       flash.alert = @job_experience.errors.full_messages.to_sentence
       render :new
+    end
+  end
+
+  def edit
+    @job_experience = authorize JobExperience.find params[:id]
+  end
+
+  def update
+    @job_experience = authorize JobExperience.find params[:id]
+    if @job_experience.update job_experience_params
+      flash.notice = "Your experience has been updated."
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 

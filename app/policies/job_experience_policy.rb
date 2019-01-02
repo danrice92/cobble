@@ -9,4 +9,16 @@ class JobExperiencePolicy < ApplicationPolicy
   def new?
     user.present?
   end
+
+  def create?
+    new?
+  end
+
+  def edit?
+    @record.creator == @user
+  end
+
+  def update?
+    edit?
+  end
 end
