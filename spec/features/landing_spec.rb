@@ -10,7 +10,7 @@ feature "landing" do
   end
 
   scenario "a user is logged in" do
-    page.set_rack_session email: user.email
+    sign_in user
     visit root_path
     expect(page).to have_content "Sign Out"
   end

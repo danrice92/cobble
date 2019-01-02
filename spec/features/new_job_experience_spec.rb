@@ -4,7 +4,7 @@ feature "new job experience" do
   let(:user) { create :user }
 
   scenario "a signed-in user creates a job experience" do
-    page.set_rack_session email: user.email
+    sign_in user
     visit root_path
 
     click_on "Share"
