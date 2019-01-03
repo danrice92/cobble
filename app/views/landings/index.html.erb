@@ -39,6 +39,12 @@
         <div class="ui label">
           Created by <%= je.creator.first_name %> <%= je.creator.last_name %>
         </div>
+        <div class="ui label">
+          Collaborators:
+            <% je.collaborators.each do |collaborator| %>
+              <%= collaborator.user.first_name %> <%= collaborator.user.last_name %>
+            <% end %>
+        </div>
       </div>
     </div>
   <% end %>

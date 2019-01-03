@@ -21,6 +21,8 @@ feature "new job experience" do
     click_on "Submit"
     expect(page).to have_content("Your experience has been saved.")
     expect(page).to have_content("T-Mobile")
+    expect(page).to have_content("Created by #{user.first_name} #{user.last_name}")
+    expect(page).to have_content("Collaborators: #{user.first_name} #{user.last_name}")
   end
 
   scenario "a user is not signed in and tries to create a job experience" do

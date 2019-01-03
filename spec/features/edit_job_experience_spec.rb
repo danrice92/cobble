@@ -20,6 +20,7 @@ feature "edit job experience" do
     expect(page).to have_content("This experience has been updated.")
     expect(page).to have_content("Super Target")
     expect(job_experience.reload.creator).to eq(user)
+    expect(page).to have_content("Collaborators: #{user.first_name} #{user.last_name}")
   end
 
   scenario "a user updates a job experience they don't own" do
@@ -33,6 +34,7 @@ feature "edit job experience" do
     expect(page).to have_content("This experience has been updated.")
     expect(page).to have_content("Cashiering at Target now pays $12/hour.")
     expect(job_experience.reload.creator).to eq(user)
+    expect(page).to have_content("Collaborators: #{the_other_guy.first_name} #{the_other_guy.last_name}")
   end
 
   scenario "a user is not signed in and tries to update a job experience" do

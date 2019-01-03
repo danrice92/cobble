@@ -8,6 +8,7 @@ class JobExperiencesController < ApplicationController
   def create
     @job_experience = authorize JobExperience.new job_experience_params
     if @job_experience.save
+      add_collaborator @job_experience
       flash.notice = "Your experience has been saved."
       redirect_to root_path
     else
@@ -23,6 +24,7 @@ class JobExperiencesController < ApplicationController
   def update
     @job_experience = authorize JobExperience.find params[:id]
     if @job_experience.update job_experience_params
+      add_collaborator @job_experience
       flash.notice = "This experience has been updated."
       redirect_to root_path
     else
@@ -44,5 +46,11 @@ class JobExperiencesController < ApplicationController
       :website,
       :creator_id
     )
+  end
+
+  def add_collaborator job_experience
+    unless job_experience.collaborator_user_ids.include? @current_user.id
+      Collaborator.create(user_id: @current_user.id, job_experience_id: job_experience.id)
+    end
   end
 end
