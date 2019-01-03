@@ -4,7 +4,7 @@ feature "new job experience" do
   let(:user) { create :user }
 
   scenario "a signed-in user creates a job experience" do
-    page.set_rack_session email: user.email
+    sign_in user
     visit root_path
 
     click_on "Share"
@@ -19,8 +19,10 @@ feature "new job experience" do
     fill_in "Recommendation", with: "It's a great place to work if you need a job or to pay the bills through college, but I wouldn't build a long-term career in T-Mobile retail."
     fill_in "Website", with: "www.t-mobile.com"
     click_on "Submit"
-    expect(page).to have_content("Your experience has been saved")
+    expect(page).to have_content("Your experience has been saved.")
     expect(page).to have_content("T-Mobile")
+    expect(page).to have_content("Created by #{user.first_name} #{user.last_name}")
+    expect(page).to have_content("Collaborators: #{user.first_name} #{user.last_name}")
   end
 
   scenario "a user is not signed in and tries to create a job experience" do

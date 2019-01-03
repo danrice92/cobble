@@ -6,12 +6,12 @@
   border-radius: 0px;
   margin-top: 0px;
 
-  .item {
+  a.item, div.dropdown.item {
     color: $white;
 
     &:hover {
-      background: rgba(0,0,0,.03);
-      color: rgba(0,0,0,.95);
+      background-color: $primary-dark;
+      color: $white;
     }
   }
 
@@ -24,4 +24,18 @@
 
 .ui.floating.message {
   margin-bottom: 0px;
+}
+
+.ui.button {
+  background-color: $primary;
+  color: $white;
+
+  &:hover {
+    background-color: $primary-dark;
+    color: $white;
+  }
+
+  a {
+    color: $white;
+  }
 }

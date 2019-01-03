@@ -1,6 +1,6 @@
 <div class="ui container">
   <div class="ui segment">
-    <h1 class="ui header">Share Your Job Experience</h1>
+    <h1 class="ui header">Edit This Job Experience</h1>
     <%= form_for @job_experience, html: {class: 'ui form'} do |f| %>
       <div class="field">
         <%= f.label :position %>
@@ -34,8 +34,7 @@
         <%= f.label :website %>
         <%= f.text_field :website, placeholder: "https://careers.walmart.com/" %>
       </div>
-      <%= f.hidden_field :creator_id, value: @current_user.id %>
-      <%= f.submit "Submit", class: "ui button" %>
+      <%= f.submit "Update", class: "ui button" %>
     <% end %>
   </div>
 </div>
