@@ -27,7 +27,7 @@
     <% end %>
 
     <div class="ui menu">
-      <div class="ui simple dropdown item left-nav-mobile">
+      <div class="ui dropdown item left-nav-mobile">
         <%= link_to "Novum Opus", root_path, class: "root-link" %>
         <i class="dropdown icon"></i>
         <div class="menu">
@@ -40,7 +40,7 @@
       <div class="right menu">
         <% if @current_user %>
           <%= link_to "Share", new_job_experience_path, class: "item" %>
-          <div class="ui simple dropdown item">
+          <div class="ui dropdown item">
             <%= @current_user.first_name %> <%= @current_user.last_name %>
             <i class="dropdown icon"></i>
             <div class="menu">
