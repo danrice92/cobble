@@ -10,6 +10,53 @@
       </div>
     </div>
     <div class="ui segment">
+      <div class="ui top attached tabular menu">
+        <div class="tab item active" id="sign-up-tab">Sign Up</div>
+        <div class="tab item" id="sign-in-tab">Sign In</div>
+      </div>
+
+      <div class="ui bottom attached tab segment active" id="sign-up-content">
+        <h2 class="ui header">Join Novum Opus</h2>
+        <%= form_for @user, html: {class: 'ui form'} do |f| %>
+          <div class="field">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, placeholder: "John" %>
+            <%= f.error_message :first_name %>
+          </div>
+          <div class="field">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, placeholder: "Smith" %>
+            <%= f.error_message :last_name %>
+          </div>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email, placeholder: "john.smith@example.com" %>
+            <%= f.error_message :email %>
+          </div>
+          <div class="ui list">
+            <div class="item">
+              Novum Opus uses magic links for verification. No need for yet another password!
+            </div>
+          </div>
+          <%= f.submit "Create Account", class: "ui button" %>
+        <% end %>
+      </div>
+
+      <div class="ui bottom attached tab segment" id="sign-in-content">
+        <h2 class="ui header">Sign Back In</h2>
+        <%= form_for :session, url: sessions_path, html: {class: "ui form"} do |f| %>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email, placeholder: "john.smith@example.com" %>
+          </div>
+          <div class="ui list">
+            <div class="item">
+              We will send you a magic link so you can log back into your account.
+            </div>
+          </div>
+          <%= f.submit "Sign In", class: "ui button" %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>

@@ -9,11 +9,8 @@ import WebpackerReact from "webpacker-react";
 //
 // WebpackerReact.setup({Landing});
 
-const clearFlashMessage = () => {
-  const message = document.getElementById("flash-message");
-  if(message) {
-    setTimeout(function() { message.style.display = "none" }, 3000);
-  }
-}
+import flashMessageHelper from "../helpers/flashMessageHelper";
+import tabHelper from "../helpers/tabHelper";
 
-window.onload = clearFlashMessage;
+flashMessageHelper();
+tabHelper();

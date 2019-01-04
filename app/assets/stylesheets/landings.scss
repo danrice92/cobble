@@ -16,4 +16,8 @@
     color: $text;
     white-space: pre-line;
   }
+
+  .tab.item {
+    cursor: pointer;
+  }
 }
