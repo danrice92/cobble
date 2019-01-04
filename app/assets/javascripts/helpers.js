@@ -4,9 +4,7 @@ $(function dropdown() {
 
 $(function flashMessage() {
   const message = $("#flash-message");
-  if(message) {
-    setTimeout(function() { message.hide(); }, 3000);
-  }
+  if(message) setTimeout(function() { message.hide(); }, 3000);
 });
 
 $(function tab() {
