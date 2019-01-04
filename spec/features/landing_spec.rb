@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "landing", js: true do
+feature "landing" do
   let(:user) { create :user }
   let!(:job_experience) { create :job_experience, creator_id: user.id }
 
