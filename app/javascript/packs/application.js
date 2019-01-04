@@ -8,9 +8,3 @@ import WebpackerReact from "webpacker-react";
 // import Landing from "./landing";
 //
 // WebpackerReact.setup({Landing});
-
-import flashMessageHelper from "../helpers/flashMessageHelper";
-import tabHelper from "../helpers/tabHelper";
-
-flashMessageHelper();
-tabHelper();

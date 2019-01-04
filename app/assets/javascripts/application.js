@@ -11,5 +11,10 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require_tree .
+//= require semantic-ui
+
+//= require flashMessage
+//= require tabs

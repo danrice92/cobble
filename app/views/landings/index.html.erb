@@ -12,11 +12,11 @@
     </div>
     <div class="ui segment">
       <div class="ui top attached tabular menu">
-        <div class="tab item active" id="sign-up-tab">Sign Up</div>
-        <div class="tab item" id="sign-in-tab">Sign In</div>
+        <div class="tab item active" data-tab="sign-up">Sign Up</div>
+        <div class="tab item" data-tab="sign-in">Sign In</div>
       </div>
 
-      <div class="ui bottom attached tab segment active" id="sign-up-content">
+      <div class="ui bottom attached tab segment active" data-tab="sign-up">
         <h2 class="ui header">Join Novum Opus</h2>
         <%= form_for @user, html: {class: 'ui form'} do |f| %>
           <div class="field">
@@ -43,7 +43,7 @@
         <% end %>
       </div>
 
-      <div class="ui bottom attached tab segment" id="sign-in-content">
+      <div class="ui bottom attached tab segment" data-tab="sign-in">
         <h2 class="ui header">Sign Back In</h2>
         <%= form_for :session, url: sessions_path, html: {class: "ui form"} do |f| %>
           <div class="field">
