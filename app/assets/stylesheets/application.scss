@@ -1,5 +1,10 @@
 @import 'variables.scss';
+@import 'landings.scss';
 @import 'job-experiences.scss';
+
+.ui.floating.message {
+  margin-bottom: 0px;
+}
 
 .ui.menu {
   background-color: $primary;
@@ -22,8 +27,18 @@
   }
 }
 
-.ui.floating.message {
+h1.ui.header {
+  font-size: 2rem;
   margin-bottom: 0px;
+}
+
+h2.ui.header {
+  font-size: 1.5rem;
+}
+
+.ui.header {
+  font-size: 1.2rem;
+  color: $primary;
 }
 
 .ui.button {

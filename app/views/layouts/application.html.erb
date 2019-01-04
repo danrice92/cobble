@@ -39,9 +39,6 @@
               <%= link_to "Sign Out", session_path(@current_user), method: :delete, class: "item" %>
             </div>
           </div>
-        <% else %>
-          <%= link_to "Sign Up", sign_up_path, class: "item" %>
-          <%= link_to "Sign In", sign_in_path, class: "item" %>
         <% end %>
       </div>
     </div>
