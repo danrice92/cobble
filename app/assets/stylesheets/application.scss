@@ -11,7 +11,21 @@
   border-radius: 0px;
   margin-top: 0px;
 
-  a.item, div.dropdown.item {
+  a.item.left-nav {
+    display: none;
+  }
+  div.item.left-nav-mobile {
+    display: flex;
+  }
+  @media (min-width: $phone) {
+    a.item.left-nav {
+      display: flex;
+    }
+    div.item.left-nav-mobile {
+      display: none;
+    }
+  }
+  a.item, a.root-link, div.dropdown.item {
     color: $white;
 
     &:hover {
@@ -19,7 +33,6 @@
       color: $white;
     }
   }
-
   .right.menu {
     .menu {
       margin-top: 1px;
@@ -49,7 +62,6 @@ h2.ui.header {
     background-color: $primary-dark;
     color: $white;
   }
-
   a {
     color: $white;
   }
