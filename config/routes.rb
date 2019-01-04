@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   # authenticate token
   get "/auth/:id", to: "sessions#auth"
 
-  resources :job_experiences, only: [:new, :create, :edit, :update]
+  resources :job_experiences, only: [:new, :create, :edit, :update, :index]
 end

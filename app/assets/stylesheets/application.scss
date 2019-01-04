@@ -1,12 +1,32 @@
+@import "semantic-ui";
 @import 'variables.scss';
+@import 'landings.scss';
 @import 'job-experiences.scss';
+
+.ui.floating.message {
+  margin-bottom: 0px;
+}
 
 .ui.menu {
   background-color: $primary;
   border-radius: 0px;
   margin-top: 0px;
 
-  a.item, div.dropdown.item {
+  a.item.left-nav {
+    display: none;
+  }
+  div.item.left-nav-mobile {
+    display: flex;
+  }
+  @media (min-width: $phone) {
+    a.item.left-nav {
+      display: flex;
+    }
+    div.item.left-nav-mobile {
+      display: none;
+    }
+  }
+  a.item, a.root-link, div.dropdown.item {
     color: $white;
 
     &:hover {
@@ -14,7 +34,6 @@
       color: $white;
     }
   }
-
   .right.menu {
     .menu {
       margin-top: 1px;
@@ -22,8 +41,18 @@
   }
 }
 
-.ui.floating.message {
+h1.ui.header {
+  font-size: 2rem;
   margin-bottom: 0px;
+}
+
+h2.ui.header {
+  font-size: 1.5rem;
+}
+
+.ui.header {
+  font-size: 1.2rem;
+  color: $primary;
 }
 
 .ui.button {
@@ -34,7 +63,6 @@
     background-color: $primary-dark;
     color: $white;
   }
-
   a {
     color: $white;
   }

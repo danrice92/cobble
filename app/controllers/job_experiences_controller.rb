@@ -1,6 +1,10 @@
 class JobExperiencesController < ApplicationController
   protect_from_forgery with: :null_session
 
+  def index
+    @job_experiences = JobExperience.order("updated_at DESC")
+  end
+
   def new
     @job_experience = authorize JobExperience.new
   end

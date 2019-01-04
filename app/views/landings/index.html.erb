@@ -1,50 +1,62 @@
 <div class="ui container">
-  <% unless @current_user %>
+  <% if @current_user %>
+    <%= render partial: 'shared/latest_job_experiences',
+               locals: { job_experiences: @job_experiences } %>
+  <% else %>
+    <img class="ui fluid image" src="business-meeting.jpg">
     <div class="ui segment">
-      <h1 class="ui center aligned header">
-        Novum Opus is a social platform that allows peers to share career advice.
-      </h1>
+      <h1 class="ui center aligned header">Forge a new path.</h1>
+      <div class="item">
+        Novum Opus is a social platform that allows peers to share career advice. We strive to help people make informed decisions about which jobs to pursue, where to go to acquire the skills they need, and how to accomplish their career goals.
+      </div>
     </div>
-  <% end %>
-  <div class="ui segment">
-    <h2 class="ui header">Latest Job Experiences</h2>
-  </div>
-  <% @job_experiences.each do |je| %>
     <div class="ui segment">
-      <div class="ui header">
-        <%= je.position %> at <%= je.company %>
-        <% if @current_user %>
-          <div class="ui right floated button"><%= link_to "Edit", edit_job_experience_path(je) %></div>
+      <div class="ui top attached tabular menu">
+        <div class="tab item active" data-tab="sign-up">Sign Up</div>
+        <div class="tab item" data-tab="sign-in">Sign In</div>
+      </div>
+
+      <div class="ui bottom attached tab segment active" data-tab="sign-up">
+        <h2 class="ui header">Join Novum Opus</h2>
+        <%= form_for @user, html: {class: 'ui form'} do |f| %>
+          <div class="field">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, placeholder: "John" %>
+            <%= f.error_message :first_name %>
+          </div>
+          <div class="field">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, placeholder: "Smith" %>
+            <%= f.error_message :last_name %>
+          </div>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email, placeholder: "john.smith@example.com" %>
+            <%= f.error_message :email %>
+          </div>
+          <div class="ui list">
+            <div class="item">
+              Novum Opus uses magic links for verification. No need for yet another password!
+            </div>
+          </div>
+          <%= f.submit "Create Account", class: "ui button" %>
         <% end %>
       </div>
-      <div class="ui list">
-        <div class="item">
-          <div class="header">Experience</div>
-          <%= je.experience %>
-        </div>
-        <div class="item">
-          <div class="header">Pay</div>
-          <%= je.pay %>
-        </div>
-        <div class="item">
-          <div class="header">Recommendation</div>
-          <%= je.recommendation %>
-        </div>
-        <div class="ui label">
-          Location: <%= je.city %>, <%= je.state %>
-        </div>
-        <div class="ui label">
-          Apply at <a class="experience-link" href="<%= je.website %>"><%= je.website %></a>
-        </div>
-        <div class="ui label">
-          Created by <%= je.creator.first_name %> <%= je.creator.last_name %>
-        </div>
-        <div class="ui label">
-          Collaborators:
-            <% je.collaborators.each do |collaborator| %>
-              <%= collaborator.user.first_name %> <%= collaborator.user.last_name %>
-            <% end %>
-        </div>
+
+      <div class="ui bottom attached tab segment" data-tab="sign-in">
+        <h2 class="ui header">Sign Back In</h2>
+        <%= form_for :session, url: sessions_path, html: {class: "ui form"} do |f| %>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email, placeholder: "john.smith@example.com" %>
+          </div>
+          <div class="ui list">
+            <div class="item">
+              We will send you a magic link so you can log back into your account.
+            </div>
+          </div>
+          <%= f.submit "Sign In", class: "ui button" %>
+        <% end %>
       </div>
     </div>
   <% end %>

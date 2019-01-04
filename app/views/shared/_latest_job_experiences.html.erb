@@ -1,0 +1,42 @@
+<div class="ui segment">
+  <h2 class="ui header">Latest Job Experiences</h2>
+</div>
+<% job_experiences.each do |je| %>
+  <div class="ui segment">
+    <div class="ui header">
+      <%= je.position %> at <%= je.company %>
+      <% if @current_user %>
+        <%= link_to "Edit", edit_job_experience_path(je), class: "ui right floated button" %>
+      <% end %>
+    </div>
+    <div class="ui list">
+      <div class="item">
+        <div class="header">Experience</div>
+        <%= je.experience %>
+      </div>
+      <div class="item">
+        <div class="header">Pay</div>
+        <%= je.pay %>
+      </div>
+      <div class="item">
+        <div class="header">Recommendation</div>
+        <%= je.recommendation %>
+      </div>
+      <div class="ui label">
+        Location: <%= je.city %>, <%= je.state %>
+      </div>
+      <div class="ui label">
+        Apply at <a class="experience-link" href="<%= je.website %>"><%= je.website %></a>
+      </div>
+      <div class="ui label">
+        Created by <%= je.creator.first_name %> <%= je.creator.last_name %>
+      </div>
+      <div class="ui label">
+        Collaborators:
+          <% je.collaborators.each do |collaborator| %>
+            <%= collaborator.user.first_name %> <%= collaborator.user.last_name %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

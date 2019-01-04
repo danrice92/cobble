@@ -39,7 +39,7 @@ RSpec.configure do |config|
 
   config.use_transactional_fixtures = true
 
-  # Uncomment these lines and comment line 48 to debug Poltergeist
+  # Uncomment these lines and comment line 49 to debug Poltergeist
   # Capybara.register_driver :poltergeist_debug do |app|
   #   Capybara::Poltergeist::Driver.new(app, :inspector => true)
   # end
@@ -47,6 +47,10 @@ RSpec.configure do |config|
   # Capybara.javascript_driver = :poltergeist_debug
 
   Capybara.javascript_driver = :poltergeist
+
+  Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, js_errors: false)
+  end
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

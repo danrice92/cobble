@@ -8,12 +8,3 @@ import WebpackerReact from "webpacker-react";
 // import Landing from "./landing";
 //
 // WebpackerReact.setup({Landing});
-
-const clearFlashMessage = () => {
-  const message = document.getElementById("flash-message");
-  if(message) {
-    setTimeout(function() { message.style.display = "none" }, 3000);
-  }
-}
-
-window.onload = clearFlashMessage;

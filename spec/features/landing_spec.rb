@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "landing" do
+feature "landing", js: true do
   let(:user) { create :user }
   let!(:job_experience) { create :job_experience, creator_id: user.id }
 
@@ -16,6 +16,7 @@ feature "landing" do
   end
 
   scenario "viewing a JobExperience on the landing page" do
+    sign_in user
     visit root_path
     expect(page).to have_content "#{job_experience.position} at #{job_experience.company}"
   end
