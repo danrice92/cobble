@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get "/auth/:id", to: "sessions#auth"
 
   resources :job_experiences, only: [:new, :create, :edit, :update, :index]
+
+  resources :user_experiences, only: [:index]
 end

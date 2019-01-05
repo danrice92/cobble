@@ -3,6 +3,10 @@
 @import 'landings.scss';
 @import 'job-experiences.scss';
 
+.ui.container {
+  padding-bottom: 10px;
+}
+
 .ui.floating.message {
   margin-bottom: 0px;
 }
