@@ -32,12 +32,16 @@
         <i class="dropdown icon"></i>
         <div class="menu">
           <%= link_to "Latest Job Experiences", job_experiences_path, class: "item" %>
-          <%= link_to "My Experiences", user_experiences_path, class: "item left-nav" %>
+          <% if @current_user %>
+            <%= link_to "My Experiences", user_experiences_path, class: "item left-nav" %>
+          <% end %>
         </div>
       </div>
       <%= link_to "Novum Opus", root_path, class: "item left-nav root-link" %>
       <%= link_to "Latest Job Experiences", job_experiences_path, class: "item left-nav" %>
-      <%= link_to "My Experiences", user_experiences_path, class: "item left-nav" %>
+      <% if @current_user %>
+        <%= link_to "My Experiences", user_experiences_path, class: "item left-nav" %>
+      <% end %>
 
       <div class="right menu">
         <% if @current_user %>
