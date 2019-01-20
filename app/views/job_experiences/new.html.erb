@@ -1,5 +1,6 @@
 <%= render partial: 'shared/job_experience_form', locals: {
   job_experience: @job_experience,
   form_title: "Share Your Job Experience",
-  form_submit: "Submit" 
+  form_submit: "Submit",
+  creator_id: @current_user.id
 } %>

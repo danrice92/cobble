@@ -2,6 +2,7 @@ class JobExperience < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :collaborators
   has_many :users, through: :collaborators
+  validates_presence_of :position, :company, :city, :state, :experience, :pay
   validates_format_of :website,
                       with: /[A-z]+[.]{1}[A-z]+/,
                       if: -> (je) { je.website.present? }

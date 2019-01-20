@@ -2,7 +2,13 @@ class JobExperiencesController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    @job_experiences = JobExperience.order("updated_at DESC")
+    if params[:user_id]
+      @job_experiences = @current_user.job_experiences.order("updated_at DESC")
+      @title = "My Experiences"
+    else
+      @job_experiences = JobExperience.order("updated_at DESC")
+      @title = "Latest Job Experiences"
+    end
   end
 
   def new
