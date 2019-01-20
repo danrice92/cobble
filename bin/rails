@@ -6,4 +6,16 @@ rescue LoadError => e
 end
 APP_PATH = File.expand_path('../config/application', __dir__)
 require_relative '../config/boot'
+
 require 'rails/commands'
+
+# Start Rails on port 4000 in development
+require 'rails/commands/server/server_command'
+
+module DefaultOptions
+  def default_options
+    super.merge!(Port: 4000) if Rails.env.development?
+  end
+end
+
+Rails::Server.send(:prepend, DefaultOptions)
