@@ -1,7 +1,8 @@
 <div class="ui container">
   <div class="ui segment">
-    <h2 class="ui header">Latest Job Experiences</h2>
+    <h2 class="ui header"><%= @title %></h2>
   </div>
-  <%= render partial: 'shared/latest_job_experiences',
-             locals: { job_experiences: @job_experiences } %>
+  <%= render partial: 'shared/latest_job_experiences', locals: {
+      job_experiences: @job_experiences
+  } %>
 </div>

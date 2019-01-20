@@ -3,8 +3,9 @@
     <div class="ui segment">
       <h2 class="ui header">Latest Job Experiences</h2>
     </div>
-    <%= render partial: 'shared/latest_job_experiences',
-               locals: { job_experiences: @job_experiences } %>
+    <%= render partial: 'shared/latest_job_experiences', locals: {
+        job_experiences: @job_experiences
+    } %>
   <% else %>
     <img class="ui fluid image" src="business-meeting.jpg">
     <div class="ui segment">
