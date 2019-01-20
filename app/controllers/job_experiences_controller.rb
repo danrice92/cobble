@@ -2,7 +2,13 @@ class JobExperiencesController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    @job_experiences = JobExperience.order("updated_at DESC")
+    if params[:user_id]
+      @job_experiences = @current_user.job_experiences.order("updated_at DESC")
+      @title = "My Experiences"
+    else
+      @job_experiences = JobExperience.order("updated_at DESC")
+      @title = JobExperience::INDEX_TITLE
+    end
   end
 
   def new
@@ -16,7 +22,7 @@ class JobExperiencesController < ApplicationController
       flash.notice = "Your experience has been saved."
       redirect_to root_path
     else
-      flash.alert = @job_experience.errors.full_messages.to_sentence
+      flash.now[:alert] = "There were errors in your submission, please correct them below."
       render :new
     end
   end
@@ -32,6 +38,7 @@ class JobExperiencesController < ApplicationController
       flash.notice = "This experience has been updated."
       redirect_to root_path
     else
+      flash.now[:alert] = "There were errors in your submission, please correct them below."
       render :edit
     end
   end
