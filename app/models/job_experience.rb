@@ -2,6 +2,9 @@ class JobExperience < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :collaborators
   has_many :users, through: :collaborators
+  validates_format_of :website,
+                      with: /[A-z]+[.]{1}[A-z]+/,
+                      if: -> (je) { je.website.present? }
 
   before_save :format_website
 

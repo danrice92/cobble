@@ -44,6 +44,7 @@
       <div class="field">
         <%= f.label :website %>
         <%= f.text_field :website, placeholder: "https://careers.walmart.com/" %>
+        <%= f.error_message :website, class: "ui bottom attached negative message" %>
       </div>
       <%= f.hidden_field :creator_id, value: @current_user.id %>
       <%= f.submit form_submit, class: "ui button" %>
