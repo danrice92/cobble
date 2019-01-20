@@ -22,7 +22,7 @@ class JobExperiencesController < ApplicationController
       flash.notice = "Your experience has been saved."
       redirect_to root_path
     else
-      flash.alert = @job_experience.errors.full_messages.to_sentence
+      flash.now[:alert] = "There were errors in your submission, please correct them below."
       render :new
     end
   end
@@ -38,6 +38,7 @@ class JobExperiencesController < ApplicationController
       flash.notice = "This experience has been updated."
       redirect_to root_path
     else
+      flash.now[:alert] = "There were errors in your submission, please correct them below."
       render :edit
     end
   end
