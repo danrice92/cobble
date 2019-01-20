@@ -7,7 +7,7 @@ class JobExperiencesController < ApplicationController
       @title = "My Experiences"
     else
       @job_experiences = JobExperience.order("updated_at DESC")
-      @title = "Latest Job Experiences"
+      @title = JobExperience::INDEX_TITLE
     end
   end
 
