@@ -5,7 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= stylesheet_link_tag  "//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css", media: "all" %>
+    <link rel="icon" href="/stairs.png">
+    <link rel="apple-touch-icon-precomposed" href="/stairs.png">
+    <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>
@@ -13,18 +15,21 @@
 
   <body>
     <% if flash.notice %>
-    <p class="ui floating positive message">
-      <%= flash.notice %>
-    </p>
+      <p class="ui floating positive message" id="flash-message">
+        <%= flash.notice %>
+      </p>
     <% end %>
+
     <% if flash.alert %>
-    <p class="ui floating negative message">
-      <%= flash.alert %>
-    </p>
+      <p class="ui floating negative message" id="flash-message">
+        <%= flash.alert %>
+      </p>
     <% end %>
+
     <div class="ui menu">
       <%= link_to "Novum Opus", root_path, class: "item" %>
     </div>
+
     <%= yield %>
   </body>
 </html>

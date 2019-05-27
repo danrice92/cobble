@@ -8,6 +8,9 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/poltergeist'
 require 'database_cleaner'
+require 'rack_session_access/capybara'
+require 'faker'
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -21,10 +24,8 @@ require 'database_cleaner'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
-# Checks for pending migrations and applies them before tests are run.
-# If you are not using ActiveRecord, you can remove these lines.
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -36,9 +37,9 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
 
-  # Uncomment these lines and comment line 48 to debug Poltergeist
+  # Uncomment these lines and comment line 49 to debug Poltergeist
   # Capybara.register_driver :poltergeist_debug do |app|
   #   Capybara::Poltergeist::Driver.new(app, :inspector => true)
   # end
@@ -46,6 +47,10 @@ RSpec.configure do |config|
   # Capybara.javascript_driver = :poltergeist_debug
 
   Capybara.javascript_driver = :poltergeist
+
+  Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, js_errors: false)
+  end
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
@@ -69,6 +74,7 @@ RSpec.configure do |config|
   end
 
   config.include FactoryBot::Syntax::Methods
+  config.include SessionHelpers
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

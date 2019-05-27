@@ -8,7 +8,7 @@ Novum Opus is a social platform that allows peers to share career advice. This r
 - [React 16.6.3](https://reactjs.org/versions)
 - [Webpacker](https://github.com/rails/webpacker)
 - [Webpacker React](https://github.com/renchap/webpacker-react)
-- [Yarn](https://yarnpkg.com/en/docs/install)
+- [NPM](https://www.npmjs.com/get-npm)
 - [PhantomJS with @babel/polyfill included in the React registry for testing](https://github.com/teampoltergeist/poltergeist)
 
 ## Setup
@@ -16,8 +16,8 @@ Novum Opus is a social platform that allows peers to share career advice. This r
 2. `bundle install` - install dependencies
 3. `bundle exec rails db:create` - create the database
 4. `bundle exec rails db:migrate` - migrate the database
-5. `yarn` - install JavaScript dependencies (run `yarn upgrade` if you are seeing unmet peer dependency warnings)
-7. `bundle exec rails s` - start the server at localhost:3000
+5. `npm install` - install JavaScript dependencies
+7. `bundle exec rails s` - start the server at localhost:4000
 
 ## Testing
 1. `bundle exec rspec`

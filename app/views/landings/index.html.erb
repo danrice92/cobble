@@ -1,36 +1,15 @@
 <div class="ui container">
   <img class="ui fluid image" src="business-meeting.jpg">
   <div class="ui segment">
-    <h1 class="ui center aligned header">
-      Novum Opus is a social platform that allows peers to share career advice.
-    </h1>
-  </div>
-  <% @job_experiences.each do |je| %>
-    <div class="ui segment">
-      <div class="ui header">
-        <%= je.position %> at <%= je.company %>
-      </div>
-      <div class="ui label">
-        Location: <%= je.city %>, <%= je.state %>
-      </div>
-      <div class="ui list">
-        <div class="item">
-          <div class="header">Experience</div>
-          <%= je.experience %>
-        </div>
-        <div class="item">
-          <div class="header">Pay</div>
-          <%= je.pay %>
-        </div>
-        <div class="item">
-          <div class="header">Recommendation</div>
-          <%= je.recommendation %>
-        </div>
-        <br>
-        <div class="ui label">
-          Website: <a class="experience-link" href="<%= je.website %>"><%= je.website %></a>
-        </div>
-      </div>
+    <h1 class="ui center aligned header">Forge a new path.</h1>
+    <div class="item">
+      Novum Opus is a life-consulting service for young adults looking to launch a career the smart way.
     </div>
-  <% end %>
+    <div class="item">
+      We help our clients forge their path by considering their personal, educational, geographical, and financial background in order to guide them toward an informed decision.
+    </div>
+    <div class="item">
+      If you are interested in working with us, please <%= mail_to "dan@novumopus.com", "email us" %> your name, contact information, and a description of the options you are considering after high school for more details.
+    </div>
+  </div>
 </div>
