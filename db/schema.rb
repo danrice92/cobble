@@ -10,34 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_03_004410) do
+ActiveRecord::Schema.define(version: 2019_05_27_212509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "collaborators", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "job_experience_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["job_experience_id"], name: "index_collaborators_on_job_experience_id"
-    t.index ["user_id"], name: "index_collaborators_on_user_id"
-  end
-
-  create_table "job_experiences", force: :cascade do |t|
-    t.string "position"
-    t.string "company"
-    t.string "city"
-    t.string "state"
-    t.text "experience"
-    t.text "pay"
-    t.text "recommendation"
-    t.string "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "creator_id"
-    t.index ["creator_id"], name: "index_job_experiences_on_creator_id"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -50,5 +26,4 @@ ActiveRecord::Schema.define(version: 2019_01_03_004410) do
     t.index ["email"], name: "index_users_on_email"
   end
 
-  add_foreign_key "job_experiences", "users", column: "creator_id"
 end
