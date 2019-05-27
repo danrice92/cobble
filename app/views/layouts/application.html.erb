@@ -27,34 +27,7 @@
     <% end %>
 
     <div class="ui menu">
-      <div class="ui dropdown item left-nav-mobile">
-        <%= link_to "Novum Opus", root_path, class: "root-link" %>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <%= link_to "Latest Job Experiences", job_experiences_path, class: "item" %>
-          <% if @current_user %>
-            <%= link_to "My Experiences", job_experiences_path(user_id: @current_user.id), class: "item left-nav" %>
-          <% end %>
-        </div>
-      </div>
-      <%= link_to "Novum Opus", root_path, class: "item left-nav root-link" %>
-      <%= link_to "Latest Job Experiences", job_experiences_path, class: "item left-nav" %>
-      <% if @current_user %>
-        <%= link_to "My Experiences", job_experiences_path(user_id: @current_user.id), class: "item left-nav" %>
-      <% end %>
-
-      <div class="right menu">
-        <% if @current_user %>
-          <%= link_to "Share", new_job_experience_path, class: "item" %>
-          <div class="ui dropdown item">
-            <%= @current_user.first_name %> <%= @current_user.last_name %>
-            <i class="dropdown icon"></i>
-            <div class="menu">
-              <%= link_to "Sign Out", session_path(@current_user), method: :delete, class: "item" %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <%= link_to "Novum Opus", root_path, class: "item" %>
     </div>
 
     <%= yield %>

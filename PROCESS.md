@@ -10,7 +10,7 @@ All stories are found in [Pivotal Tracker](https://www.pivotaltracker.com/n/proj
 2. Create a local branch in your development environment to work on the story:
         $ git checkout development
         $ git pull
-        $ git checkout -b job-experiences-#143516809
+        $ git checkout -b job-experiences-143516809
 3. Create a feature test for your feature.
 4. Implement your feature and satisfy the test you created.
 5. Repeat 3 and 4 as needed, WIP committing any work that is not completed at the end of the day.

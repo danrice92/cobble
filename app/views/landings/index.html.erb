@@ -1,65 +1,15 @@
 <div class="ui container">
-  <% if @current_user %>
-    <%= render partial: 'shared/latest_job_experiences', locals: {
-        job_experiences: @job_experiences,
-        title: @title
-    } %>
-  <% else %>
-    <img class="ui fluid image" src="business-meeting.jpg">
-    <div class="ui segment">
-      <h1 class="ui center aligned header">Forge a new path.</h1>
-      <div class="item">
-        Novum Opus is a social platform that allows peers to share career advice. We strive to help people make informed decisions about which jobs to pursue, where to go to acquire the skills they need, and how to accomplish their career goals.
-      </div>
+  <img class="ui fluid image" src="business-meeting.jpg">
+  <div class="ui segment">
+    <h1 class="ui center aligned header">Forge a new path.</h1>
+    <div class="item">
+      Novum Opus is a life-consulting service for young adults looking to launch a career the smart way.
     </div>
-    <div class="ui segment">
-      <div class="ui top attached tabular menu">
-        <div class="tab item active" data-tab="sign-up">Sign Up</div>
-        <div class="tab item" data-tab="sign-in">Sign In</div>
-      </div>
-
-      <div class="ui bottom attached tab segment active" data-tab="sign-up">
-        <h2 class="ui header">Join Novum Opus</h2>
-        <%= form_for @user, html: {class: 'ui form'} do |f| %>
-          <div class="field">
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name, placeholder: "John" %>
-            <%= f.error_message :first_name, class: "ui bottom attached negative message" %>
-          </div>
-          <div class="field">
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name, placeholder: "Smith" %>
-            <%= f.error_message :last_name, class: "ui bottom attached negative message" %>
-          </div>
-          <div class="field">
-            <%= f.label :email %>
-            <%= f.text_field :email, placeholder: "john.smith@example.com" %>
-            <%= f.error_message :email, class: "ui bottom attached negative message" %>
-          </div>
-          <div class="ui list">
-            <div class="item">
-              Novum Opus uses magic links for verification. No need for yet another password!
-            </div>
-          </div>
-          <%= f.submit "Create Account", class: "ui button" %>
-        <% end %>
-      </div>
-
-      <div class="ui bottom attached tab segment" data-tab="sign-in">
-        <h2 class="ui header">Sign Back In</h2>
-        <%= form_for :session, url: sessions_path, html: {class: "ui form"} do |f| %>
-          <div class="field">
-            <%= f.label :email %>
-            <%= f.text_field :email, placeholder: "john.smith@example.com" %>
-          </div>
-          <div class="ui list">
-            <div class="item">
-              We will send you a magic link so you can log back into your account.
-            </div>
-          </div>
-          <%= f.submit "Sign In", class: "ui button" %>
-        <% end %>
-      </div>
+    <div class="item">
+      We help our clients forge their path by considering their personal, educational, geographical, and financial background in order to guide them toward an informed decision.
     </div>
-  <% end %>
+    <div class="item">
+      If you are interested in working with us, please <%= mail_to "dan@novumopus.com", "email us" %> your name, contact information, and a description of the options you are considering after high school for more details.
+    </div>
+  </div>
 </div>
