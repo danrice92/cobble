@@ -1,0 +1,11 @@
+defaults: &defaults
+  MAIL_SENDER: 'getthisaddressfrom@theproject.owner'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
