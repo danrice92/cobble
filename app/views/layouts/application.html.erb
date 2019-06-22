@@ -28,6 +28,14 @@
 
     <div class="ui menu">
       <%= link_to "Novum Opus", root_path, class: "item" %>
+      <div class="right menu">
+        <% if @current_user %>
+            <div class="item"><%= @current_user.name %></div>
+            <%= link_to "Sign out", session_path(@current_user), method: :delete, class: "item" %>
+          <% else %>
+            <%= link_to "Sign in", new_session_path, class: "item" %>
+        <% end %>
+      </div>
     </div>
 
     <%= yield %>

@@ -1,5 +1,5 @@
 <div class="ui container">
-  <img class="ui fluid image" src="business-meeting.jpg">
+  <img class="ui fluid image" src="/business-meeting.jpg">
 
   <div class="ui segment">
     <h1 class="ui center aligned header">Forge a new path.</h1>
@@ -14,17 +14,19 @@
     </div>
   </div>
 
-  <div class="ui segment">
-    <%= form_for @user, html: {class: "ui form"} do |f| %>
-      <div class="field">
-        <%= f.label :name, "Full name" %>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-      </div>
-      <%= f.submit "Schedule a consultation", class: "ui button" %>
-    <% end %>
-  </div>
+  <% if @current_user.blank? %>
+    <div class="ui segment">
+      <%= form_for @user, html: {class: "ui form"} do |f| %>
+        <div class="field">
+          <%= f.label :name, "Full name" %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+        <%= f.submit "Schedule a consultation", class: "ui button" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

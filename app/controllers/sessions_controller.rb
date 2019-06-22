@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    if @user
+    if @current_user
       redirect_to root_path, alert: "You are already signed in!"
     end
   end

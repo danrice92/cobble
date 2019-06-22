@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash.notice = "Please check your email for a verification link to finish your registration."
       redirect_to root_path
     else
-      render root_path
+      redirect_to root_path
     end
   end
 
