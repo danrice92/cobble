@@ -2,17 +2,20 @@
 @import "variables.scss";
 @import "landings.scss";
 
+.ui.floating.message {
+   margin-bottom: 0px;
+   position: fixed;
+   width: 100%;
+   z-index: 10;
+ }
+
 .ui.menu {
-  background-color: $primary;
+  background-color: $menu;
   border-radius: 0px;
+  margin-top: 0px;
 
-  a.item {
+  .item {
     color: $white;
-
-    &:hover {
-      background-color: $primary-dark;
-      color: $white;
-    }
   }
 }
 

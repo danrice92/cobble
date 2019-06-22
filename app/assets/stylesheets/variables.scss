@@ -5,14 +5,22 @@ $red: #A3130E;
 $dark-red: #770E0B;
 $dark-gray: #333333;
 $white: #FFFFFF;
+$logo-red: #f30000;
+$logo-blue: #000fff;
+$smoky-black: #090809;
 
 // Color variables
 $primary: $blue;
+$background: $white;
+$text: $dark-gray;
+$menu: $blue;
+
+
+// Currently unused
+// note that this is a darker shade of $blue, not $logo-bluge
 $primary-dark: $dark-blue;
 $accent: $red;
 $accent-dark: $dark-red;
-$text: $dark-gray;
-$background: $white;
 
 // Breakpoints
 $phone: 768px;
