@@ -31,7 +31,7 @@ feature "user sign up and session management" do
     expect(page).to have_content "You are now signed out."
   end
 
-  scenario "a user cannot tries to sign in when they already are" do
+  scenario "a user cannot sign in when they already are" do
     sign_in user
     visit new_session_path
     expect(page).to have_content "You are already signed in!"
