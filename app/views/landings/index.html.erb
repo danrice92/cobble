@@ -1,20 +1,37 @@
 <div class="ui container">
   <img class="ui fluid image" src="/business-meeting.jpg">
 
-  <div class="ui segment">
-    <h1 class="ui center aligned header">Forge a new path.</h1>
-    <div class="item">
-      Novum Opus is a life consulting service for young adults looking to enter the adult world the smart way.
-    </div>
-    <div class="item">
-      We help our clients make career and lifestyle decisions based on their interests, background, and financial practicality.
-    </div>
-    <div class="item">
-      Sign up below if you are interested in a free introductory consultation.
-    </div>
-  </div>
+  <% if @current_user.present? %>
+    <div class="ui segment">
+      <!-- Two possible options: -->
+      <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/novum-opus/consultation" style="min-width:320px;height:630px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script> -->
 
-  <% if @current_user.blank? %>
+      <!-- Calendly inline widget begin -->
+      <!-- <div class="calendly-inline-widget" style="min-width:320px;height:580px;" data-auto-load="false">
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+        <script>
+          Calendly.initInlineWidget({
+            url: 'https://calendly.com/novum-opus/consultation'
+          });
+        </script>
+      </div> -->
+      <!-- Calendly inline widget end -->
+    </div>
+  <% else %>
+    <div class="ui segment">
+      <h1 class="ui center aligned header">Forge a new path.</h1>
+      <div class="item">
+        Novum Opus is a life consulting service for young adults looking to enter the adult world the smart way.
+      </div>
+      <div class="item">
+        We help our clients make career and lifestyle decisions based on their interests, background, and financial practicality.
+      </div>
+      <div class="item">
+        Sign up below if you are interested in a free introductory consultation.
+      </div>
+    </div>
+
     <div class="ui segment">
       <%= form_for @user, html: {class: "ui form"} do |f| %>
         <div class="field">
