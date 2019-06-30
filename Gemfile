@@ -56,11 +56,10 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'poltergeist'
   gem 'launchy'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
   gem 'rack_session_access'
