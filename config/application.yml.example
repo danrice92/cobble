@@ -1,5 +1,8 @@
 defaults: &defaults
-  MAIL_SENDER: 'getthisaddressfrom@theproject.owner'
+  CALENDLY_KEY: 'your_calendly_key'
+  CALENDLY_WEBHOOK_ID: 'your_webhook_id'
+  MAIL_SENDER: 'your_mail_sender'
+  MAILER_HOST: 'localhost:4000'
 
 development:
   <<: *defaults

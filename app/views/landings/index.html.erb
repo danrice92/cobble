@@ -2,11 +2,8 @@
   <img class="ui fluid image" src="/business-meeting.jpg">
 
   <% if @current_user.present? %>
-    <div class="calendly-inline-widget" style="min-width:320px;height:580px;" data-auto-load="false">
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-      <script>
-        Calendly.initInlineWidget({ url: 'https://calendly.com/novum-opus/consultation' });
-      </script>
+    <div class="ui segment">
+      <div class="ui center aligned header">Thank you for signing up.</div>
     </div>
   <% else %>
     <div class="ui segment">
