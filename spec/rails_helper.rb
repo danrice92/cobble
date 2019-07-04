@@ -6,7 +6,8 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'capybara/poltergeist'
+require 'capybara/rails'
+require 'capybara/rspec'
 require 'database_cleaner'
 require 'rack_session_access/capybara'
 require 'faker'
@@ -38,19 +39,6 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.use_transactional_fixtures = true
-
-  # Uncomment these lines and comment line 49 to debug Poltergeist
-  # Capybara.register_driver :poltergeist_debug do |app|
-  #   Capybara::Poltergeist::Driver.new(app, :inspector => true)
-  # end
-  #
-  # Capybara.javascript_driver = :poltergeist_debug
-
-  Capybara.javascript_driver = :poltergeist
-
-  Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, js_errors: false)
-  end
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
