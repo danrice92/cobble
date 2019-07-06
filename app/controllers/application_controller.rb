@@ -4,11 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_current_user
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  def sign_in_user user
-   user.expire_token!
-   session[:email] = user.email
-  end
-
   def pundit_user
    @current_user
   end

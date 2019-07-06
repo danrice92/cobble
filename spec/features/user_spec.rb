@@ -8,10 +8,10 @@ feature "user sign up and session management" do
     clear_emails
     fill_in "Full name", with: "John Smith"
     fill_in "Email", with: "john.smith@example.com"
-    click_on "Schedule a consultation"
+    click_on "Schedule a free consultation"
     open_email("john.smith@example.com")
     current_email.click_link "this link"
-    expect(page).to have_content "You have been signed in!"
+    expect(page).to have_content "You have been signed in."
   end
 
   scenario "a user wants to sign in to an existing account" do
@@ -21,7 +21,7 @@ feature "user sign up and session management" do
     click_on "Sign back in"
     open_email(user.email)
     current_email.click_link "this link"
-    expect(page).to have_content "You have been signed in!"
+    expect(page).to have_content "You have been signed in."
   end
 
   scenario "a user wants to sign out" do

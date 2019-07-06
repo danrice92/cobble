@@ -2,6 +2,7 @@ class UserMailer < ApplicationMailer
   def sign_up
     @user = params[:user]
     @path = params[:path]
+    @sign_in_path = "http://#{ENV['MAILER_HOST']}/sessions/new"
     mail(to: @user.email, subject: "Welcome to Novum Opus!")
   end
 

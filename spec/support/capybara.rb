@@ -22,5 +22,5 @@ end
 
 Capybara.configure do |config|
   # change this to :chrome to observe tests in a real browser
-  config.javascript_driver = :chrome
+  config.javascript_driver = :headless_chrome
 end
