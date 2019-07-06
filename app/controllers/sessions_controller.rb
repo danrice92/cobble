@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
     user = User.find_by_id user_id
 
     if !user || !user.valid_token?(token)
-      redirect_to root_path, alert: "That link was invalid. Please go to the sign in page and try again."
+      redirect_to root_path, alert: "That link was invalid. Please try signing in again."
     elsif user.auth_token_expired?
       redirect_to root_path, alert: "That link has expired. Please try signing in again."
     else
