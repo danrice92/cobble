@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email email
 
     if !user
-      redirect_to sign_in_path, alert: "We could not find record of that email. Please try again."
+      redirect_to new_session_path, alert: "We could not find record of that email. Please try again or sign up first."
     else
       user.send_sign_in_link
       redirect_to root_path, notice: "We have sent you a login link. Please check your email."
