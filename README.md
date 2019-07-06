@@ -1,5 +1,5 @@
 # Novum Opus Web
-Novum Opus is a social platform that allows peers to share career advice. This repo is home to the web application and the database.
+Novum Opus is a life consulting platform for helping young adults start their lives the smart way. This repo is home to the web application and the database.
 
 ## Technology Stack
 - [Ruby 2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/)
@@ -9,7 +9,6 @@ Novum Opus is a social platform that allows peers to share career advice. This r
 - [Webpacker](https://github.com/rails/webpacker)
 - [Webpacker React](https://github.com/renchap/webpacker-react)
 - [NPM](https://www.npmjs.com/get-npm)
-- [PhantomJS with @babel/polyfill included in the React registry for testing](https://github.com/teampoltergeist/poltergeist)
 
 ## Setup
 1. `git clone git@github.com:danrice92/novum_opus_web.git` - clone the project down from GitHub.

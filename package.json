@@ -2,17 +2,16 @@
   "name": "novum_opus_web",
   "private": true,
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "^4.0.7",
     "babel-preset-react": "^6.24.1",
-    "phantomjs-prebuilt": "^2.1.16",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "npm": "^6.10.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "semantic-ui-react": "^0.84.0",
     "webpacker-react": "^0.3.2"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^3.7.2"
   }
 }

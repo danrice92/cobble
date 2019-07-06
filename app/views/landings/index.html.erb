@@ -1,15 +1,34 @@
 <div class="ui container">
-  <img class="ui fluid image" src="business-meeting.jpg">
-  <div class="ui segment">
-    <h1 class="ui center aligned header">Forge a new path.</h1>
-    <div class="item">
-      Novum Opus is a life consulting service for young adults looking to launch a career the smart way.
+  <img class="ui fluid image" src="/business-meeting.jpg">
+
+  <% if @current_user.present? %>
+    <div class="ui segment">
+      <div class="ui center aligned header">Thank you for signing up.</div>
     </div>
-    <div class="item">
-      We help our clients forge their path by considering their personal, educational, geographical, and financial background in order to guide them toward an informed decision.
+  <% else %>
+    <div class="ui segment">
+      <h1 class="ui center aligned header">Start life intelligently.</h1>
+      <div class="item">
+        Our life consulting mentors partner with young adults to guide them through the tough, life-changing decisions they need to make.
+      </div>
+      <div class="item">
+        Sign up below to schedule a free introductory consultation.
+      </div>
     </div>
-    <div class="item">
-      If you are interested in working with us, please <%= mail_to "dan@novumopus.com", "email us" %> your name, contact information, and a description of the options you are considering after high school for more details.
+
+    <div class="ui segment">
+      <h2 class="ui center aligned header">Sign up</h2>
+      <%= form_for @user, html: {class: "ui form"} do |f| %>
+        <div class="field">
+          <%= f.label :name, "Full name" %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+        <%= f.submit "Schedule a free consultation", class: "ui button" %>
+      <% end %>
     </div>
-  </div>
+  <% end %>
 </div>

@@ -1,18 +1,31 @@
 @import "semantic-ui";
 @import "variables.scss";
+@import "calendly.scss";
 @import "landings.scss";
+@import "segments.scss";
+
+.ui.floating.message {
+   margin-bottom: 0px;
+   position: fixed;
+   width: 100%;
+   z-index: 10;
+ }
 
 .ui.menu {
-  background-color: $primary;
+  background-color: $menu;
   border-radius: 0px;
+  margin-top: 0px;
 
-  a.item {
+  #homepage-link {
     color: $white;
 
-    &:hover {
-      background-color: $primary-dark;
+    &:hover, &:active {
       color: $white;
     }
+  }
+
+  .item {
+    color: $white;
   }
 }
 
