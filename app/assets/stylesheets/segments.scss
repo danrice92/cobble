@@ -1,0 +1,10 @@
+.ui.segment {
+  .item {
+    font-size: 16px;
+    color: $text;
+    white-space: pre-line;
+  }
+  .tab.item {
+    cursor: pointer;
+  }
+}
