@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if @current_user
-      redirect_to root_path, alert: "You are already signed in!"
+      redirect_to root_path, alert: "You are already signed in."
     end
   end
 
@@ -38,7 +38,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, alert: "That link has expired. Please go to the sign in page and try again."
     else
       sign_in_user user
-      redirect_to root_path, notice: "You have been signed in."
+      redirect_to new_consultation_path, notice: "You are now signed in."
     end
   end
 

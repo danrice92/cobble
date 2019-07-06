@@ -16,7 +16,8 @@ feature "user sign up and session management" do
     open_email "kingdaphnes@loz.com"
     current_email.click_link "this link"
 
-    expect(page).to have_content "You have been signed in."
+    expect(page).to have_content "You are now signed in."
+    expect(current_path).to eq new_consultation_path
   end
 
   scenario "a user tries to sign up with an expired auth token" do
@@ -43,7 +44,8 @@ feature "user sign up and session management" do
     open_email user.email
     current_email.click_link "this link"
 
-    expect(page).to have_content "You have been signed in."
+    expect(page).to have_content "You are now signed in."
+    expect(current_path).to eq new_consultation_path
   end
 
   scenario "a user wants to sign out" do
@@ -58,6 +60,6 @@ feature "user sign up and session management" do
     sign_in user
     visit new_session_path
 
-    expect(page).to have_content "You are already signed in!"
+    expect(page).to have_content "You are already signed in."
   end
 end
