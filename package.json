@@ -2,7 +2,6 @@
   "name": "novum_opus_web",
   "private": true,
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
     "@rails/webpacker": "^4.0.7",
     "babel-preset-react": "^6.24.1",
     "npm": "^6.10.0",
