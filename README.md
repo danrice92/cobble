@@ -1,5 +1,5 @@
 # Novum Opus Web
-Novum Opus is a social platform that allows peers to share career advice. This repo is home to the web application and the database.
+Novum Opus is a life consulting platform for helping young adults start their lives the smart way. This repo is home to the web application and the database.
 
 ## Technology Stack
 - [Ruby 2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/)
