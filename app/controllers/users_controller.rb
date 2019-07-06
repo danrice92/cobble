@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash.notice = "Please check your email for a verification link to complete your registration."
       redirect_to root_path
     else
-      redirect_to root_path, alert: @user.errors.full_messages.to_sentence
+      redirect_to root_path, alert: "#{@user.errors.full_messages.to_sentence}."
     end
   end
 

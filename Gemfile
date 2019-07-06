@@ -64,6 +64,7 @@ group :test do
   gem 'faker'
   gem 'rack_session_access'
   gem 'capybara-email'
+  gem 'timecop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
