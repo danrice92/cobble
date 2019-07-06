@@ -1,7 +1,8 @@
 @import "semantic-ui";
 @import "variables.scss";
-@import "landings.scss";
 @import "calendly.scss";
+@import "landings.scss";
+@import "segments.scss";
 
 .ui.floating.message {
    margin-bottom: 0px;
@@ -14,6 +15,14 @@
   background-color: $menu;
   border-radius: 0px;
   margin-top: 0px;
+
+  #homepage-link {
+    color: $white;
+
+    &:hover, &:active {
+      color: $white;
+    }
+  }
 
   .item {
     color: $white;

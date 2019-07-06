@@ -2,15 +2,13 @@
   <img class="ui fluid image" src="/business-meeting.jpg">
 
   <div class="ui segment">
-    <h2 class="ui center aligned header">Sign back in to an existing profile.</h2>
+    <h2 class="ui center aligned header">Sign in</h2>
     <%= form_for :session, url: sessions_path, html: {class: "ui form"} do |f| %>
       <%= f.label :email %>
       <%= f.text_field :email %>
 
       <div class="ui list">
-        <div class="item">
-          We will send you a magic link so you can log back into your account.
-        </div>
+        <div class="item">We will send you a magic link so you can sign back into your account.</div>
       </div>
 
       <%= f.submit "Sign back in", class: "ui button" %>

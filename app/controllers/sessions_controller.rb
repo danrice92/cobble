@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if @current_user
-      redirect_to root_path, alert: "You are already signed in!"
+      redirect_to root_path, alert: "You are already signed in."
     end
   end
 
@@ -30,15 +30,15 @@ class SessionsController < ApplicationController
   def auth
     user_id = params[:id]
     token = params[:token]
-    user = User.find_by(id: user_id)
+    user = User.find_by_id user_id
 
     if !user || !user.valid_token?(token)
-      redirect_to root_path, notice: "It seems your link is invalid. Try requesting a new login link."
+      redirect_to root_path, alert: "That link was invalid. Please try signing in again."
     elsif user.auth_token_expired?
-      redirect_to root_path, notice: "Your login link has expired. Try requesting a new login link."
+      redirect_to root_path, alert: "That link has expired. Please try signing in again."
     else
-      sign_in_user(user)
-      redirect_to root_path, notice: "You have been signed in."
+      sign_in_user user
+      redirect_to new_consultation_path, notice: "You are now signed in."
     end
   end
 
@@ -46,5 +46,9 @@ class SessionsController < ApplicationController
 
   def session_params
     params.require(:session).permit(:email)
+  end
+
+  def sign_in_user user
+    session[:email] = user.email
   end
 end

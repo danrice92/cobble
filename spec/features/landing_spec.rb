@@ -5,7 +5,7 @@ feature "landing" do
 
   scenario "a user is not signed in and visits the landing page" do
     visit root_path
-    expect(page).to have_content "Sign up below if you are interested in a free introductory consultation."
+    expect(page).to have_content "Sign up below to schedule a free introductory consultation."
     expect(page).to have_content "Sign in"
   end
 

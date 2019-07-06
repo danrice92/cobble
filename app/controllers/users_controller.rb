@@ -8,10 +8,10 @@ class UsersController < ApplicationController
 
     if @user.save
       @user.send_sign_up_link
-      flash.notice = "Please check your email for a verification link to finish your registration."
+      flash.notice = "Please check your email for a verification link to complete your registration."
       redirect_to root_path
     else
-      redirect_to root_path
+      redirect_to root_path, alert: "#{@user.errors.full_messages.to_sentence}."
     end
   end
 

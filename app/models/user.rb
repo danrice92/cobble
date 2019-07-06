@@ -26,11 +26,6 @@ class User < ApplicationRecord
    Time.now.utc > (self.auth_token_created_at + token_validity)
   end
 
-  def expire_token!
-   self.auth_token = nil
-   save!
-  end
-
   private
 
   def generate_token_and_path user

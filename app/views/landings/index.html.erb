@@ -7,19 +7,17 @@
     </div>
   <% else %>
     <div class="ui segment">
-      <h1 class="ui center aligned header">Forge a new path.</h1>
+      <h1 class="ui center aligned header">Start life intelligently.</h1>
       <div class="item">
-        Novum Opus is a life consulting service for young adults looking to enter the adult world the smart way.
+        Our life consulting mentors partner with young adults to guide them through the tough, life-changing decisions they need to make.
       </div>
       <div class="item">
-        We help our clients make career and lifestyle decisions based on their interests, background, and financial practicality.
-      </div>
-      <div class="item">
-        Sign up below if you are interested in a free introductory consultation.
+        Sign up below to schedule a free introductory consultation.
       </div>
     </div>
 
     <div class="ui segment">
+      <h2 class="ui center aligned header">Sign up</h2>
       <%= form_for @user, html: {class: "ui form"} do |f| %>
         <div class="field">
           <%= f.label :name, "Full name" %>
@@ -29,7 +27,7 @@
           <%= f.label :email %>
           <%= f.text_field :email %>
         </div>
-        <%= f.submit "Schedule a consultation", class: "ui button" %>
+        <%= f.submit "Schedule a free consultation", class: "ui button" %>
       <% end %>
     </div>
   <% end %>
