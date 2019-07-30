@@ -65,7 +65,7 @@ feature "user sign up and session management" do
 
   scenario "a user tries to sign in with an email that is not in the database" do
     visit new_session_path
-    fill_in "Email", with: "yargofwargo@example.com"
+    fill_in "Email", with: "midna@loz.com"
     click_on "Sign back in"
 
     expect(page).to have_content "We could not find record of that email. Please try again or sign up first."
