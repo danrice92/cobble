@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    email = session_params[:email].to_s
+    email = session_params[:email].to_s.downcase
     user = User.find_by_email email
 
     if !user

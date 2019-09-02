@@ -17,7 +17,18 @@ feature "user sign up and session management" do
     current_email.click_link "this link"
 
     expect(page).to have_content "You are now signed in."
+    expect(User.count).to eq 1
     expect(current_path).to eq new_consultation_path
+  end
+
+  scenario "a user signs up and their phone capitalizes their email" do
+    sign_up_user
+    visit new_session_path
+    fill_in "Email", with: "Kingdaphnes@loz.com"
+    click_on "Sign back in"
+
+    expect(page).not_to have_content "We could not find record of that email."
+    expect(page).to have_content "We have sent you a login link."
   end
 
   scenario "a user tries to sign up with an expired auth token" do
