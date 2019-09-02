@@ -16,8 +16,14 @@ gem 'webpacker'
 gem 'webpacker-react', '~> 0.3.2'
 gem 'jquery-rails'
 
+# Authentication
 gem 'pundit'
+
+# Emails
 gem 'sendgrid-ruby'
+
+# Forms
+gem 'invisible_captcha'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
