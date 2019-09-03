@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates_presence_of :name
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true, format: { with: /.+@.+\..+/i, message: "was invalid" }
 
   before_save :format_email
 
@@ -29,7 +29,7 @@ class User < ApplicationRecord
   private
 
   def generate_token_and_path user
-    user.auth_token = SecureRandom.base64(10)
+    user.auth_token = SecureRandom.urlsafe_base64(10)
     user.auth_token_created_at = Time.now.utc
     save!
 

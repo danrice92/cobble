@@ -3,9 +3,12 @@ require "rails_helper"
 feature "user sign up and session management" do
   let(:user) { create :user }
 
+  before do
+    clear_emails
+  end
+
   def sign_up_user
     visit root_path
-    clear_emails
     fill_in "Full name", with: "Daphnes Nohansen Hyrule"
     fill_in "Email", with: "kingdaphnes@loz.com"
     click_on "Schedule a free consultation"
@@ -56,9 +59,25 @@ feature "user sign up and session management" do
     expect(page).to have_content "Email has already been taken."
   end
 
+  scenario "a user tries to sign up with a poorly-formatted email" do
+    visit root_path
+    fill_in "Full name", with: "Hand in the Toilet"
+    
+    fill_in "Email", with: "hand"
+    click_on "Schedule a free consultation"
+    expect(page).to have_content "Email was invalid."
+
+    fill_in "Email", with: "hand@"
+    click_on "Schedule a free consultation"
+    expect(page).to have_content "Email was invalid."
+
+    fill_in "Email", with: "hand.com"
+    click_on "Schedule a free consultation"
+    expect(page).to have_content "Email was invalid."
+  end
+
   scenario "a user wants to sign in to an existing account" do
     visit root_path
-    clear_emails
     click_on "Sign in"
     fill_in "Email", with: user.email
     click_on "Sign back in"
