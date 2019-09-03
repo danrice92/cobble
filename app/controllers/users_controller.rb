@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
+  invisible_captcha only: [:create], honeypot: :passcode, on_spam: :root_redirect
 
   def create
     @user = User.new user_params
@@ -19,5 +17,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def root_redirect
+    redirect_to root_path, alert: "Silly bot!"
   end
 end
