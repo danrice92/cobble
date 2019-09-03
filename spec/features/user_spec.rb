@@ -31,6 +31,16 @@ feature "user sign up and session management" do
     expect(page).to have_content "We have sent you a login link."
   end
 
+  scenario "a bot tries to sign up" do
+    visit root_path
+    fill_in "Full name", with: "Scrapper"
+    fill_in "Email", with: "scrapper@loz.com"
+    fill_in "If you are a human, ignore this field", with: "I'm a bot"
+    click_on "Schedule a free consultation"
+
+    expect(page).to have_content "Silly bot!"
+  end
+
   scenario "a user tries to sign up with an expired auth token" do
     Timecop.freeze(1.day.ago) { sign_up_user }
     open_email "kingdaphnes@loz.com"
